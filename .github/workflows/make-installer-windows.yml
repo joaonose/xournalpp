@@ -56,6 +56,11 @@ jobs:
         with:
           msystem: ${{ inputs.msystem }}
           msys_package_env: ${{ inputs.msys_package_env }}
+          - name: Install Rust (MSYS2)
+            shell: msys2 {0}
+            run: |
+    pacman -Sy --noconfirm rust
+
       - name: 'Build Xournal++'
         uses: ./.github/actions/build
         with:
