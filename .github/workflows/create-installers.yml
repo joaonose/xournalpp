@@ -29,9 +29,6 @@ on:
       artifact_version_suffix:
         required: false
         default: ''
-  push:
-    branches:
-      - master
 
 
 
