@@ -4,31 +4,45 @@ name: Create Installers
 on:
   workflow_dispatch:
     inputs:
-      windows_builds:
-        description: "Windows builds"
-        required: false
-        default: |
-          [
-            {
-              "runner": "windows-latest",
-              "displayed_name": "Windows Portable",
-              "msystem": "UCRT64",
-              "msys_package_env": "mingw-w64-ucrt-x86_64",
-              "build_portable": true
-            }
-          ]
-      linux_builds:
-        required: false
-        default: '[]'
-      macos_builds:
-        required: false
-        default: '[]'
-      head_sha:
-        required: false
-        default: ''
-      artifact_version_suffix:
-        required: false
-        default: ''
+  windows_builds:
+    description: "Windows builds"
+    type: string
+    required: false
+    default: |
+      [
+        {
+          "runner": "windows-latest",
+          "displayed_name": "Windows Portable",
+          "msystem": "UCRT64",
+          "msys_package_env": "mingw-w64-ucrt-x86_64",
+          "build_portable": true
+        }
+      ]
+
+  linux_builds:
+    description: "Linux builds"
+    type: string
+    required: false
+    default: '[]'
+
+  macos_builds:
+    description: "macOS builds"
+    type: string
+    required: false
+    default: '[]'
+
+  head_sha:
+    description: "Commit SHA"
+    type: string
+    required: false
+    default: ''
+
+  artifact_version_suffix:
+    description: "Artifact suffix"
+    type: string
+    required: false
+    default: ''
+
 
 
 
